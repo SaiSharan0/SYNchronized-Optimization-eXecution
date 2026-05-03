@@ -1,0 +1,41 @@
+version: "3.9"
+
+services:
+  db:
+    image: mysql:8.4
+    container_name: atis_db
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: trading_db
+      MYSQL_ROOT_PASSWORD: Sait1467prem
+    ports:
+      - "3306:3306"
+    volumes:
+      - atis_mysqldata:/var/lib/mysql
+    healthcheck:
+      test: ["CMD-SHELL", "mysqladmin ping -h localhost -uroot -p$${MYSQL_ROOT_PASSWORD} --silent"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: atis_api
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      DATABASE_URL: mysql+aiomysql://root:Sait1467prem@db:3306/trading_db
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./uploads:/app/uploads
+    depends_on:
+      db:
+        condition: service_healthy
+    command: >
+      sh -c "uvicorn app.main:app --host 0.0.0.0 --port 8000"
+
+volumes:
+  atis_mysqldata:
