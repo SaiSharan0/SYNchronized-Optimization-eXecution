@@ -1,4 +1,11 @@
-# SYNchronized Optimization eXecution
+# SYNchronized Optimization eXecution (SYN0X)
+
+🚀 AI-powered trading intelligence platform
+
+![Next.js](https://img.shields.io/badge/frontend-Next.js-black)
+![FastAPI](https://img.shields.io/badge/backend-FastAPI-green)
+![MySQL](https://img.shields.io/badge/database-MySQL-blue)
+![License](https://img.shields.io/badge/license-MIT-purple)
 
 > Production-grade AI-powered trading journal, analytics engine, and decision intelligence platform.
 
