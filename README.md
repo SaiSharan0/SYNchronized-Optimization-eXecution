@@ -7,7 +7,7 @@
 ![MySQL](https://img.shields.io/badge/database-MySQL-blue)
 ![License](https://img.shields.io/badge/license-MIT-purple)
 
-> Production-grade AI-powered trading journal, analytics engine, and decision intelligence platform.
+> Production-grade AI-powered trading journal, analytics engine, and behavioral intelligence platform.
 
 ---
 
@@ -144,7 +144,7 @@ Then open MySQL Workbench or mysql CLI and run: `CREATE DATABASE trading_db;`
 **Requirements:** Python 3.11 or 3.12
 
 ```bash
-cd ai-trading-system/backend
+cd backend
 
 # Create virtual environment
 python -m venv .venv
@@ -176,12 +176,12 @@ JWT_SECRET_KEY=replace-with-random-32-char-string-minimum
 SECRET_KEY=replace-with-another-random-32-char-string
 
 # Optional — AI analysis (mock fallback used if absent)
-OPENAI_API_KEY=sk-your-openai-key-here
+OPENAI_API_KEY=your_openai_api_key_here
 OPENAI_MODEL=gpt-4o
 
 # Optional — Telegram alerts
-TELEGRAM_BOT_TOKEN=bot1234567890:your-bot-token
-TELEGRAM_CHAT_ID=your-default-chat-id
+TELEGRAM_BOT_TOKEN=your_telegram_bot_token
+TELEGRAM_CHAT_ID=your_chat_id
 
 # CORS — must match your frontend URL
 ALLOWED_ORIGINS=["http://localhost:3000"]
@@ -227,7 +227,7 @@ Interactive API docs: **http://localhost:8000/docs**
 **Requirements:** Node.js 18+
 
 ```bash
-cd ai-trading-system/frontend
+cd frontend
 
 # Copy environment file
 cp .env.local.example .env.local
@@ -514,3 +514,19 @@ npm start
 | Docker Compose              | ✅     |
 | Dark UI (TradingView style) | ✅     |
 | Responsive Layout           | ✅     |
+
+
+## ⭐ Support
+
+If you found this useful:
+
+- ⭐ Star this repo
+- 🍴 Fork it
+- 📢 Share it
+
+---
+
+## 🔥 Final Thought
+
+Traders don’t fail because of strategy.  
+They fail because of behavior.
